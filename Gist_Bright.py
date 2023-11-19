@@ -13,7 +13,7 @@ a = ["43.bmp", "43msg100%-LSB.bmp", "43msg50%-LSB.bmp", "43msg10%-LSB.bmp",
 def gist(imageN):
     img = cv2.imread(imageN, 0)
     histr = cv2.calcHist([img], [0], None, [256], [0, 256])
-    plt.title(a[i])
+    plt.figure('Гистограмма ' + a[i])
     plt.plot(histr)
     plt.show()
 
