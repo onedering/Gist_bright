@@ -15,7 +15,8 @@ def gist(imageN):
     histr = cv2.calcHist([img], [0], None, [256], [0, 256])
     plt.figure('Гистограмма ' + a[i])
     plt.plot(histr)
-    plt.show()
+    plt.savefig('Гистограмма ' + a[i] + ".jpg") #Автосейв без показа гистограммы
+    # plt.show()
 
 
 def matrix(imageN):
