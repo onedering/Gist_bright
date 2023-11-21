@@ -11,13 +11,21 @@ a = ["43.bmp", "43msg100%-LSB.bmp", "43msg50%-LSB.bmp", "43msg10%-LSB.bmp",
 
 
 def gist(imageN):
-    img = cv2.imread(imageN, 0)
-    histr = cv2.calcHist([img], [0], None, [256], [0, 256])
-    plt.title('Гистограмма ' + a[i])
-    plt.plot(histr)
-    # Автосейв без показа гистограммы
-    plt.savefig('Гистограмма ' + a[i] + ".jpg")
+    # img = cv2.imread(imageN, 0)
+    # histr = cv2.calcHist([img], [0], None, [256], [0, 256])
+    # plt.title('Гистограмма ' + a[i])
+    # plt.hist(histr, bins=200)
+    # # plt.plot(histr, kind='hist')
+    # # Автосейв без показа гистограммы
+    # # plt.savefig('Гистограмма ' + a[i] + ".jpg")
     # plt.show()
+    img = cv2.imread(imageN, cv2.IMREAD_GRAYSCALE)
+    plt.title('Гистограмма ' + a[i])
+    plt.hist(img.ravel(), 200, [0, 256])
+    # plt.savefig('Гистограмма ' + a[i] + ".jpg", edgecolor='b', dpi=300)
+    img = 0
+    plt.show()
+
 
 
 def matrix(imageN):
